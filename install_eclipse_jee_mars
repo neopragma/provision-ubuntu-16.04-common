@@ -1,0 +1,30 @@
+#!/bin/bash
+#=================================================================================
+# Install Eclipse JEE Mars on Ubuntu 16.04 Desktop
+#
+# Version: 1.0.0
+# Date: 07 Jun 2016
+# Author: Dave Nicolette
+#=================================================================================
+
+echo ' '
+echo 'Installing Eclipse JEE Mars'
+
+mkdir -p "$HOME/tmp" && pushd "$HOME/tmp" >/dev/null || exit
+wget http://mirror.csclub.uwaterloo.ca/eclipse/technology/epp/downloads/release/mars/2/eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz
+pushd /opt
+sudo cp "$HOME/tmp/eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz" .
+sudo tar -zxvf eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz
+sudo rm eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz
+popd
+
+pushd "$HOME"
+echo ' ' >> ~/.profile
+echo '# add eclipse to PATH' >> ~/.profile
+echo 'PATH=$PATH:/opt/eclipse' >> ~/.profile
+. .profile
+popd
+
+pushd /usr/share/applications
+sudo cp "$HOME/provision-ubuntu-16.04-javatrain/provision-ubuntu-16.04-common/eclipse.desktop" .
+popd

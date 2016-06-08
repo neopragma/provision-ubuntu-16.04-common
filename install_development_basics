@@ -1,0 +1,30 @@
+#!/bin/bash
+#=================================================================================
+# Install packages for Ubuntu 16.04 Desktop that are common to all software
+# development configurations.
+#
+# Version: 1.0.0 
+# Date: 07 Jun 2016
+# Author: Dave Nicolette
+#=================================================================================
+
+echo ' '
+echo 'Installing general software development packages'
+echo '    build-essential'
+echo '    dkms'
+echo '    python-software-properties'
+echo '    aptitude'
+echo '    atom'
+
+sudo apt install -y \
+  build-essential \
+  dkms \
+  python-software-properties \
+  aptitude
+
+# install packages from non-standard repositories
+
+sudo add-apt-repository -y ppa:webupd8team/atom
+sudo apt update
+sudo apt install -y atom
+
