@@ -24,10 +24,3 @@ else
     "./$COMMON_DIR/install_eclipse_jee_mars"
 fi
 
-echo ' '
-echo 'Setting Unity launcher favorites suitable for a Java development environment'
-gsettings set com.canonical.Unity.Launcher favorites "['nautilus.desktop', 'firefox.desktop', 'eclipse.desktop', 'atom.desktop', 'gnome-terminal.desktop']"
-
-echo ' '
-echo 'Setting a Java-themed desktop background image'
-gsettings set org.gnome.desktop.background picture-uri "file:///$INSTALL_DIR/background.jpg"

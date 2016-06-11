@@ -18,6 +18,11 @@ sudo tar -zxvf eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz
 sudo rm eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz
 popd
 
+echo ' '
+echo 'Workaround for bug in Eclipse - force it to use GTK 2 instead of 3'
+
+sudo sed -i '/--launcher.appendVmargs/ i \--launcher.GTK_version\n2' /opt/eclipse/eclipse.ini
+
 pushd "$HOME"
 echo ' ' >> ~/.profile
 echo '# add eclipse to PATH' >> ~/.profile
@@ -26,5 +31,5 @@ echo 'PATH=$PATH:/opt/eclipse' >> ~/.profile
 popd
 
 pushd /usr/share/applications
-sudo cp "$HOME/provision-ubuntu-16.04-javatrain/provision-ubuntu-16.04-common/eclipse.desktop" .
+sudo cp "$INSTALL_DIR/$COMMON_DIR/eclipse.desktop" .
 popd
