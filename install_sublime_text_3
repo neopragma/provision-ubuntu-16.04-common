@@ -1,0 +1,16 @@
+#!/bin/bash
+#=================================================================================
+# Install Sublime Text 3
+#
+# Version: 1.0.0 
+# Date: 03 May 2017
+# Author: Dave Nicolette
+#=================================================================================
+
+echo ' '
+echo 'Installing Sublime Text 3'
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt update
+sudo apt install -y sublime-text-3-installer
+

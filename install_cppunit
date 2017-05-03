@@ -1,0 +1,18 @@
+#!/bin/bash
+#=================================================================================
+# Install CppUnit
+#
+# Version: 1.0.0 
+# Date: 03 May 2017
+# Author: Dave Nicolette
+#=================================================================================
+
+echo ' '
+echo 'Installing CppUnit packages'
+echo '    libcppunit-dev'
+echo '    libcppunit-doc'
+
+sudo apt install -y \
+  libcppunit-dev \
+  libcppunit-doc
+
